@@ -1,4 +1,7 @@
 
+
+import FloatingHearts from './FloatingHearts';
+import Opening from './Opening';
 import Special from './Special';
 import Story from './Story';
 import Gallery from './Gallery';
@@ -8,6 +11,9 @@ import './App.css';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+const [showOpening, setShowOpening] = useState(true);
+
 
   useEffect(() => {
   const elements = document.querySelectorAll(
@@ -38,6 +44,12 @@ function App() {
 
   return (
     <main>
+
+          <FloatingHearts />
+      {showOpening && (
+      <Opening onEnter={() => setShowOpening(false)} />
+    )}
+
       {/* Navigation */}
       <nav className="navbar">
         <a href="#home" className="logo" onClick={closeMenu}>
