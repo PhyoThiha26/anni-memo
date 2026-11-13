@@ -1066,3 +1066,34 @@ footer svg {
   }
 }
 
+
+.new-section {
+  min-height: 450px;
+  padding: 100px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #fff5f3;
+}
+
+.new-section p {
+  color: #a2767f;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.new-section h2 {
+  margin: 20px 0;
+  color: #563640;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 500;
+}
+
+.new-section span {
+  color: #987e83;
+  font-size: 13px;
+}
+

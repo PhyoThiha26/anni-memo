@@ -1,54 +1,51 @@
 
+import Surprise from './Surprise';
+import AnniversaryCounter from './AnniversaryCounter';
+import LoveLetter from './LoveLetter';
+import { useState, useEffect } from 'react';
+import { Heart, ArrowDown, Menu, X } from 'lucide-react';
 
 import FloatingHearts from './FloatingHearts';
-import Opening from './Opening';
-import Special from './Special';
 import Story from './Story';
 import Gallery from './Gallery';
-import { Heart, ArrowDown, Menu, X } from 'lucide-react';
-import { useState, useEffect } from 'react';
+
 import './App.css';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-const [showOpening, setShowOpening] = useState(true);
-
-
   useEffect(() => {
-  const elements = document.querySelectorAll(
-    '.timeline-item, .photo-card'
-  );
+    const elements = document.querySelectorAll(
+      '.timeline-item, .photo-card'
+    );
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
 
-  elements.forEach((element) => {
-    element.classList.add('reveal-item');
-    observer.observe(element);
-  });
+    elements.forEach((element) => {
+      element.classList.add('reveal-item');
+      observer.observe(element);
+    });
 
-  return () => observer.disconnect();
-}, []);
+    return () => observer.disconnect();
+  }, []);
 
   const closeMenu = () => setMenuOpen(false);
 
   return (
     <main>
+      <FloatingHearts />
 
-          <FloatingHearts />
-      {showOpening && (
-      <Opening onEnter={() => setShowOpening(false)} />
-    )}
+    
 
       {/* Navigation */}
       <nav className="navbar">
@@ -67,12 +64,14 @@ const [showOpening, setShowOpening] = useState(true);
         <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
           <a href="#home" onClick={closeMenu}>Home</a>
           <a href="#story" onClick={closeMenu}>Our Story</a>
-          <a href="#memories" onClick={closeMenu}>Memories</a>
-          <a href="#letter" onClick={closeMenu}>Love Letter</a>
+          <a href="#memories" onClick={closeMenu}>Gallery</a>
+          <a href="#letter">Love Letter</a>
+          <a href="#anniversary" onClick={closeMenu}>Our Days</a>
+          <a href="#surprise" onClick={closeMenu}>Surprise</a>
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* 01 - Landing Page */}
       <section className="hero" id="home">
         <div className="hero-decoration heart-one">♡</div>
         <div className="hero-decoration heart-two">♡</div>
@@ -112,11 +111,23 @@ const [showOpening, setShowOpening] = useState(true);
         </a>
       </section>
 
+      {/* 02 - Love Story */}
       <Story />
 
+      {/* 03 - Gallery */}
       <Gallery />
 
-     <Special />
+      <LoveLetter />
+
+      {/* 04 - Anniversary Counter */}
+      <section id="anniversary" className="new-section">
+        <AnniversaryCounter />
+      </section>
+
+      {/* 06 - Surprise Box */}
+      <section id="surprise" className="new-section">
+        <Surprise />
+      </section>
 
       <footer>
         Made with <Heart size={13} fill="currentColor" /> for Hsu

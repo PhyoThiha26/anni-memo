@@ -1,6 +1,5 @@
 
-export const relationshipStartDate = '';
-
+export const relationshipStartDate = '2026-07-14T02:23:00+06:30';
 export const moments = [
   {
     id: 1,

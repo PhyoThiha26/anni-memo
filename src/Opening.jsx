@@ -1,62 +1,68 @@
 
-import { useState } from 'react';
-import { Heart, Sparkles } from 'lucide-react';
-import './Opening.css';
+// import { useState } from 'react';
+// import { Heart, Sparkles, MailOpen } from 'lucide-react';
+// import './Opening.css';
 
-function Opening({ onEnter }) {
-  const [leaving, setLeaving] = useState(false);
 
-  const handleEnter = () => {
-    setLeaving(true);
+//   return (
+//     <div className={`opening-screen ${leaving ? 'opening-leaving' : ''}`}>
+//       <div className="opening-card">
 
-    setTimeout(() => {
-      onEnter();
-    }, 900);
-  };
+//         <div className="opening-top-decoration">
+//           <span>♡</span>
+//           <span>✦</span>
+//           <span>♡</span>
+//         </div>
 
-  return (
-    <div className={`opening-screen ${leaving ? 'opening-leaving' : ''}`}>
-      <div className="opening-decoration decoration-one">♡</div>
-      <div className="opening-decoration decoration-two">✦</div>
-      <div className="opening-decoration decoration-three">♡</div>
-      <div className="opening-decoration decoration-four">✧</div>
+//         <div className="opening-heart">
+//           <Heart size={27} fill="currentColor" />
+//         </div>
 
-      <div className="opening-content">
-        <div className="opening-icon">
-          <Heart size={25} fill="currentColor" />
-        </div>
+//         <span className="opening-label">
+//           A SPECIAL DAY FOR US
+//         </span>
 
-        <span className="opening-label">
-          A LITTLE SOMETHING FOR YOU
-        </span>
+//         <h1>
+//           Happy Anniversary,
+//           <br />
+//           <em>My Hsu.</em>
+//         </h1>
 
-        <h1>
-          For my favorite
-          <br />
-          <em>person, Hsu.</em>
-        </h1>
+//         <div className="opening-divider">
+//           <span />
+//           <Heart size={13} fill="currentColor" />
+//           <span />
+//         </div>
 
-        <p>
-          I've made something special.
-          <br />
-          A little collection of memories, feelings,
-          <br />
-          and everything I want you to know.
-        </p>
+//         <p className="opening-message">
+//           Another chapter of our story,
+//           <br />
+//           another reason to celebrate us.
+//           <br />
+//           I made a little something for you.
+//         </p>
 
-        <button className="opening-button" onClick={handleEnter}>
-          Open My Surprise
-          <Heart size={16} fill="currentColor" />
-        </button>
+//         <button
+//           className="opening-button"
+//           onClick={handleEnter}
+//         >
+//           <MailOpen size={17} />
+//           Open My Letter
+//         </button>
 
-        <div className="opening-footer">
-          <Sparkles size={13} />
-          <span>MADE WITH LOVE, JUST FOR YOU</span>
-          <Sparkles size={13} />
-        </div>
-      </div>
-    </div>
-  );
-}
+//         <div className="opening-bottom">
+//           <Sparkles size={13} />
+//           <span>MADE WITH LOVE, JUST FOR YOU</span>
+//           <Sparkles size={13} />
+//         </div>
 
-export default Opening;
+//         <span className="opening-corner corner-one">♡</span>
+//         <span className="opening-corner corner-two">♡</span>
+//         <span className="opening-corner corner-three">✧</span>
+//         <span className="opening-corner corner-four">✧</span>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Opening;

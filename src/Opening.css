@@ -6,13 +6,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   padding: 24px;
+  overflow-y: auto;
   background:
-    radial-gradient(circle at 15% 20%, #f8e5e7 0, transparent 35%),
-    radial-gradient(circle at 85% 80%, #f4dfe2 0, transparent 35%),
-    #fffaf8;
-  transition: opacity 0.9s ease, transform 0.9s ease;
+    radial-gradient(ellipse at 15% 15%, #f5dfe3 0%, transparent 40%),
+    radial-gradient(ellipse at 85% 85%, #f3e1e2 0%, transparent 40%),
+    #fff9f6;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .opening-leaving {
@@ -21,55 +21,87 @@
   pointer-events: none;
 }
 
-.opening-content {
+.opening-card {
   position: relative;
-  z-index: 2;
   width: 100%;
   max-width: 620px;
+  padding: 75px 35px 55px;
+  overflow: hidden;
   text-align: center;
-  animation: openingAppear 1.2s ease both;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid #ecd6d9;
+  outline: 1px solid rgba(189, 126, 140, 0.25);
+  outline-offset: 8px;
+  box-shadow: 0 25px 80px rgba(113, 61, 75, 0.08);
+  animation: openingAppear 1.1s ease both;
 }
 
-.opening-icon {
+.opening-top-decoration {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 27px;
+  color: #c58b98;
+  font-size: 19px;
+}
+
+.opening-heart {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 58px;
-  height: 58px;
-  margin: 0 auto 28px;
-  color: #a65e70;
-  background: #f5e3e5;
-  border: 1px solid #ead0d5;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 25px;
+  color: #ad6879;
+  background: #f7e8ea;
+  border: 1px solid #efd5da;
   border-radius: 50%;
 }
 
 .opening-label {
   display: block;
-  margin-bottom: 22px;
-  color: #a2767f;
+  margin-bottom: 20px;
+  color: #a77a83;
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 3px;
 }
 
-.opening-content h1 {
+.opening-card h1 {
+  position: relative;
+  z-index: 1;
   margin: 0;
-  color: #563640;
+  color: #593943;
   font-family: 'Playfair Display', serif;
-  font-size: clamp(42px, 8vw, 76px);
+  font-size: clamp(39px, 7vw, 62px);
   font-weight: 500;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
-.opening-content h1 em {
+.opening-card h1 em {
   color: #bd7e8c;
   font-weight: 400;
 }
 
-.opening-content p {
-  margin: 25px 0 32px;
+.opening-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 26px 0;
+  color: #c58b98;
+}
+
+.opening-divider span {
+  width: 45px;
+  height: 1px;
+  background: #e5c5cb;
+}
+
+.opening-message {
+  margin: 0 0 30px;
   color: #987e83;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 2;
 }
 
@@ -77,67 +109,60 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 16px 28px;
-  color: #fffaf8;
+  gap: 11px;
+  padding: 15px 27px;
+  color: white;
   background: #713d4b;
   border: none;
   border-radius: 50px;
   font-family: inherit;
   font-size: 13px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .opening-button:hover {
-  background: #8d5262;
+  background: #915968;
   transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(113, 61, 75, 0.15);
 }
 
-.opening-footer {
+.opening-bottom {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-top: 55px;
-  color: #b58b94;
+  margin-top: 48px;
+  color: #bd929a;
   font-size: 9px;
   letter-spacing: 2px;
 }
 
-.opening-decoration {
+.opening-corner {
   position: absolute;
-  color: #d9a6af;
-  opacity: 0.55;
-  animation: openingFloat 5s ease-in-out infinite;
-  user-select: none;
+  color: #d8a6af;
+  opacity: 0.7;
+  font-size: 26px;
 }
 
-.decoration-one {
-  top: 15%;
-  left: 13%;
-  font-size: 42px;
+.corner-one {
+  top: 20px;
+  left: 22px;
 }
 
-.decoration-two {
-  top: 23%;
-  right: 16%;
-  font-size: 27px;
-  animation-delay: 1s;
+.corner-two {
+  top: 20px;
+  right: 22px;
 }
 
-.decoration-three {
-  right: 12%;
-  bottom: 17%;
-  font-size: 48px;
-  animation-delay: 2s;
+.corner-three {
+  bottom: 20px;
+  left: 22px;
 }
 
-.decoration-four {
-  bottom: 20%;
-  left: 17%;
-  font-size: 30px;
-  animation-delay: 1.5s;
+.corner-four {
+  bottom: 20px;
+  right: 22px;
 }
 
 @keyframes openingAppear {
@@ -152,45 +177,31 @@
   }
 }
 
-@keyframes openingFloat {
-  0%, 100% {
-    transform: translateY(0) rotate(0);
-  }
-
-  50% {
-    transform: translateY(-15px) rotate(10deg);
-  }
-}
-
 @media (max-width: 600px) {
-  .opening-content h1 {
-    font-size: 46px;
+  .opening-card {
+    padding: 60px 20px 45px;
   }
 
-  .opening-content p {
-    font-size: 13px;
+  .opening-card h1 {
+    font-size: 42px;
   }
 
-  .opening-footer {
-    margin-top: 42px;
+  .opening-message {
+    font-size: 12px;
+  }
+
+  .opening-bottom {
+    margin-top: 38px;
     font-size: 8px;
-    letter-spacing: 1.5px;
-  }
-
-  .decoration-one {
-    left: 7%;
-  }
-
-  .decoration-two {
-    right: 7%;
-  }
-
-  .decoration-three {
-    right: 6%;
-  }
-
-  .decoration-four {
-    left: 7%;
+    letter-spacing: 1.4px;
   }
 }
-        
+
+@media (prefers-reduced-motion: reduce) {
+  .opening-screen,
+  .opening-card,
+  .opening-button {
+    transition: none;
+    animation: none;
+  }
+}
