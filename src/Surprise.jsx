@@ -51,50 +51,79 @@ function Surprise() {
               </div>
             </div>
 
-            <div className="bouquet">
-              <div className="bouquet-wrap" />
-              <div className="bouquet-ribbon" />
+            
+<div className="bouquet premium-bouquet">
 
-              <div className="flower flower-one">
-                <span className="petal p1" />
-                <span className="petal p2" />
-                <span className="petal p3" />
-                <span className="petal p4" />
-                <span className="petal p5" />
-                <span className="flower-center" />
-              </div>
+  {/* Flower stems */}
+  <div className="premium-stems">
+    <span />
+    <span />
+    <span />
+    <span />
+    <span />
+  </div>
 
-              <div className="flower flower-two">
-                <span className="petal p1" />
-                <span className="petal p2" />
-                <span className="petal p3" />
-                <span className="petal p4" />
-                <span className="petal p5" />
-                <span className="flower-center" />
-              </div>
+  {/* Greenery */}
+  <div className="premium-leaves">
+    {Array.from({ length: 8 }).map((_, i) => (
+      <span key={i} className={`premium-leaf leaf-${i + 1}`} />
+    ))}
+  </div>
 
-              <div className="flower flower-three">
-                <span className="petal p1" />
-                <span className="petal p2" />
-                <span className="petal p3" />
-                <span className="petal p4" />
-                <span className="petal p5" />
-                <span className="flower-center" />
-              </div>
+  {/* Roses */}
+  
+{/* Realistic layered roses */}
+<div className="premium-roses">
+  {Array.from({ length: 5 }).map((_, i) => (
+    <div className={`premium-rose rose-${i + 1}`} key={i}>
+      <div className="rose-outer-petals">
+        {Array.from({ length: 8 }).map((_, j) => (
+          <span key={j} />
+        ))}
+      </div>
 
-              <div className="flower flower-four">
-                <span className="petal p1" />
-                <span className="petal p2" />
-                <span className="petal p3" />
-                <span className="petal p4" />
-                <span className="petal p5" />
-                <span className="flower-center" />
-              </div>
+      <div className="rose-middle-petals">
+        {Array.from({ length: 6 }).map((_, j) => (
+          <span key={j} />
+        ))}
+      </div>
 
-              <div className="bouquet-leaf leaf-one" />
-              <div className="bouquet-leaf leaf-two" />
-              <div className="bouquet-leaf leaf-three" />
-            </div>
+      <div className="rose-inner-petals">
+        {Array.from({ length: 4 }).map((_, j) => (
+          <span key={j} />
+        ))}
+      </div>
+
+      <div className="rose-center">
+        <span />
+      </div>
+    </div>
+  ))}
+</div>
+
+
+  {/* Baby's breath */}
+  <div className="babys-breath">
+    {Array.from({ length: 12 }).map((_, i) => (
+      <span key={i} className={`breath breath-${i + 1}`} />
+    ))}
+  </div>
+
+  {/* Luxury wrapping */}
+  <div className="premium-wrapper">
+    <div className="wrapper-left" />
+    <div className="wrapper-right" />
+    <div className="wrapper-center" />
+    <div className="wrapper-ribbon" />
+    <div className="wrapper-bow">
+      <span />
+      <span />
+      <i />
+    </div>
+  </div>
+
+</div>
+
           </div>
         </button>
 
