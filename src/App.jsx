@@ -111,7 +111,6 @@ function App() {
         </a>
       </section>
 
-      {/* 02 - Love Story */}
       <Story />
 
       {/* 03 - Gallery */}
